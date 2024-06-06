@@ -1,0 +1,37 @@
+Last login: Wed Jun  5 16:40:08 on ttys000
+(base) athenawu@Athenas-MBP ~ % cd ~/Desktop/AnalysisProjects
+(base) athenawu@Athenas-MBP AnalysisProjects % ls
+Class Requirements	projects		python-class-activities
+VBA-challenge		python-challenge	stock-analysis
+(base) athenawu@Athenas-MBP AnalysisProjects % cd python-challenge
+(base) athenawu@Athenas-MBP python-challenge % cd PyBank
+(base) athenawu@Athenas-MBP PyBank % python main.py
+ 
+Financial Analysis
+---------------------------------------
+Total Months: 86
+Total: $22564198
+Average Change: $-8311.11
+Greatest Increase in Profits: Aug-16 ($1862002)
+Greatest Decrease in Profits: Feb-14 ($-1825558)
+ 
+Dataset including new column for 'Change' can be seen below.
+ 
+      Date  Profit/Losses    Change
+0   Jan-10        1088983      None
+1   Feb-10        -354534  -1443517
+2   Mar-10         276622    631156
+3   Apr-10        -728133  -1004755
+4   May-10         852993   1581126
+..     ...            ...       ...
+81  Oct-16        -729004  -1627245
+82  Nov-16        -112209    616795
+83  Dec-16         516313    628522
+84  Jan-17         607208     90895
+85  Feb-17         382539   -224669
+
+[86 rows x 3 columns]
+(base) athenawu@Athenas-MBP PyBank % 
+
+
+
