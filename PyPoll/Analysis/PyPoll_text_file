@@ -1,0 +1,24 @@
+Last login: Thu Jun  6 09:42:36 on ttys000
+(base) athenawu@Athenas-MBP ~ % cd ~/Desktop/AnalysisProjects
+(base) athenawu@Athenas-MBP AnalysisProjects % cd python-challenge
+(base) athenawu@Athenas-MBP python-challenge % cd PyPoll
+(base) athenawu@Athenas-MBP PyPoll % conda activate dev
+(dev) athenawu@Athenas-MBP PyPoll % python poll.py
+ 
+Election Results
+-------------------------
+Total Votes: 369711
+-------------------------
+Charles Casper Stockham: 23.049% (85213)
+Diana DeGette: 73.812% (272892)
+Raymon Anthony Doane: 3.139% (11606)
+-------------------------
+Winner: Diana DeGette
+-------------------------
+(dev) athenawu@Athenas-MBP PyPoll % 
+
+
+
+
+
+
