@@ -1,49 +1,65 @@
-import pandas as pd
+import os
+import csv
 
 # path to CSV file
-file_path = 'Resources/budget_data.csv'
+file_path = os.path.join('..', 'PyBank', 'Resources', 'budget_data.csv')
 
-# load CSV into DataFrame
-df = pd.read_csv(file_path)
+# read CSV file
+with open(file_path, encoding='UTF-8') as csvfile:
+    csv_reader = csv.reader(csvfile, delimiter=',')
+    next(csv_reader)
 
-## calculations
+    ## calculations
+    month_count = 0
+    date_list = []
+    net_total = 0
+    change_list = []
+    greatest_increase = 0
+    prev_profit = None
 
-# number of months
-month_count = df['Date'].count()
+    for row in csv_reader:
 
-# net total profit/losses
-net_total = df['Profit/Losses'].sum()
+        # number of months
+        month_count = month_count + 1
+        date = row[0]
+        date_list.append(date)
 
-# calculate changes in profit and put in new column
-df['Change'] = None
-for i in range(1, month_count):
-    df.iloc[i, df.columns.get_loc('Change')] = df.iloc[i]['Profit/Losses'] - df.iloc[i-1]['Profit/Losses']
+        # net total profit/losses
+        net_total = net_total + int(row[1])
 
-# average change
-average_change = df['Change'].mean()
-formatted_average_change = "{:.2f}".format(average_change)
+        # calculate changes in profit
+        current_profit = int(row[1])
+        if prev_profit is None:
+            change = 0
+            change_list.append(change)
+        else:
+            change = current_profit - prev_profit
+            change_list.append(change)
+        prev_profit = current_profit
 
-# greatest increase in profits
-greatest_increase = df['Change'].max()
-greatest_increase_date = df.loc[df['Change'] == greatest_increase, 'Date'].values[0]
+    # average change
+    average_change = sum(change_list) / (len(change_list)-1)
+    formatted_average_change = "{:.2f}".format(average_change)
 
-# greatest decrease in profits
-greatest_decrease = df['Change'].min()
-greatest_decrease_date = df.loc[df['Change'] == greatest_decrease, 'Date'].values[0]
+    # greatest increase in profits
+    greatest_increase = max(change_list)
+    greatest_increase_index = change_list.index(greatest_increase)
+    greatest_increase_date = date_list[greatest_increase_index]
+
+    # greatest decrease in profits
+    greatest_decrease = min(change_list)
+    greatest_decrease_index = change_list.index(greatest_decrease)
+    greatest_decrease_date = date_list[greatest_decrease_index]
 
 # print results
-print(" ")
+print("")
 print("Financial Analysis")
-print("---------------------------------------")
+print("-----------------------------")
 print(f"Total Months: {month_count}")
 print(f"Total: ${net_total}")
 print(f"Average Change: ${formatted_average_change}")
 print(f"Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})")
 print(f"Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})")
-print(" ")
+print("")
 
 # print dataset just for reference
-print("Dataset including new column for 'Change' can be seen below.")
-print(" ")
-print(df)
-
