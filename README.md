@@ -9,21 +9,18 @@ The first script, main.py, is for the PyBank challenge. It analyzes the financia
 
 #### Main Script
 The main python script is located in 'PyBank/main.py'.
-The resulting text file is located in 'PyBank/Analysis/PyPoll_text_file'.
+The resulting text file is located in 'PyBank/Analysis/PyBank_text_file'.
 
 #### Specific Code Sources
 
-##### Function: Create new empty column
-- **Line 18**: Assisted by ChatGPT
+##### Function: Skip header row
+- **Line 10**: Assisted by ChatGPT
 
-##### Function: Fill in new column with values
-- **Line 20**: Assisted by ChatGPT
+##### Function: Format average change as 0.00%
+- **Line 42**: Assisted by ChatGPT
 
-##### Function: Format variable
-- **Line 24**: Assisted by ChatGPT
-
-##### Function: Locate value in corresponding row
-- **Line 28**: Assisted by ChatGPT
+##### Function: Find max value from list
+- **Line 45**: Assisted by ChatGPT
 
 ## PyPoll Project Overview
 
@@ -37,11 +34,5 @@ The resulting text file is located in 'PyPoll/Analysis/PyPoll_text_file'.
 
 #### Specific Code Sources
 
-##### Function: Unique counts
-- **Lines 23-24**: Assisted by ChatGPT
-
-##### Function: Convert unique list of candidates to list
-- **Line 25**: Assisted by ChatGPT
-
-##### Function: Find index of max value
-- **Line 44**: Assisted by ChatGPT
+##### Function: Convert CSV file into a list so that we can loop through it multiple times
+- **Line 11**: Assisted by ChatGPT
