@@ -1,8 +1,6 @@
-Last login: Thu Jun  6 09:42:36 on ttys000
-(base) athenawu@Athenas-MBP ~ % cd ~/Desktop/AnalysisProjects
-(base) athenawu@Athenas-MBP AnalysisProjects % cd python-challenge
-(base) athenawu@Athenas-MBP python-challenge % cd PyPoll
-(base) athenawu@Athenas-MBP PyPoll % conda activate dev
+Last login: Sun Jun  9 15:15:40 on ttys000
+(base) athenawu@Athenas-MBP ~ % conda activate dev
+(dev) athenawu@Athenas-MBP ~ % cd ~/Desktop/AnalysisProjects/python-challenge/PyPoll
 (dev) athenawu@Athenas-MBP PyPoll % python poll.py
  
 Election Results
@@ -16,6 +14,7 @@ Raymon Anthony Doane: 3.139% (11606)
 Winner: Diana DeGette
 -------------------------
 (dev) athenawu@Athenas-MBP PyPoll % 
+
 
 
 
